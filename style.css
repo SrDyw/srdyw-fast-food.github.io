@@ -1,0 +1,971 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;500;700&family=Roboto+Flex:opsz,wght@8..144,100&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat';
+
+    font-weight: 500;
+}
+
+*::-webkit-scrollbar {
+    background-color: #fff;
+    width: 10px;
+}
+*::-webkit-scrollbar-thumb {
+    background-color: #eba960;
+    border-radius: 10px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    background-color: #fff;
+    
+}
+
+
+
+
+#home {
+    width: 100%;
+    height: 100vh;
+
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), url('src/fast-foot-banner.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+
+    overflow: hidden;
+}
+
+
+/* -----------NAVBAR------------------ */
+
+.navbar {
+    position: fixed;
+    width: 150px;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #c57f5169;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(10px);
+
+    z-index: 10000;
+}
+
+
+.navbar ul {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 400px;
+    width: 120px;
+}
+
+
+.navbar ul li {
+    position: relative;
+    list-style: none;
+
+    width: 50px;
+    height: 50px;
+    background: #eba960;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 60px;
+    transition: .2s;
+    transition-delay: .1s;
+
+    overflow: hidden;
+}
+
+
+.navbar ul li .icon{
+    position: absolute;
+    color: #fff;
+    font-size: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: 0.2s;
+
+}
+
+.navbar ul li .link {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-150%);
+    opacity: 0;
+    transition: .2s;
+}
+
+.navbar ul li .link a {
+    text-decoration: none;
+    color: #fff;
+}
+
+
+
+.navbar ul .home:hover {
+    width: 100px;
+    transition-delay: 0s;
+    background-image: linear-gradient(to right, #fa709a 0%, #fee140 100%);
+    /* box-shadow: 10px 10px 10px #fffc52; */
+}
+
+.navbar ul .menu:hover {
+    width: 100px;
+    transition-delay: 0s;
+    background-image: linear-gradient(to top, #d299c2 0%, #fef9d7 100%);
+    
+    /* box-shadow: 10px 10px 10px #fffc52; */
+}
+
+.navbar ul .time:hover {
+    width: 100px;
+    transition-delay: 0s;
+    background-image: linear-gradient(to right, #43e97b 0%, #38f9d7 100%);
+    /* box-shadow: 10px 10px 10px #fffc52; */
+}
+
+.navbar ul .contact:hover {
+    width: 100px;
+    transition-delay: 0s;
+    background-image: linear-gradient(to top, #37ecba 0%, #72afd3 100%);
+    /* box-shadow: 10px 10px 10px #fffc52; */
+}
+
+
+
+.navbar ul li:hover .icon{
+    font-size: 0px;
+}
+
+.navbar ul li:hover .link{
+    transform: translateY(-50%);
+    opacity: 1;
+}
+
+/* -----------INFO CONTENT------------------ */
+.info {
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 60%;
+    min-width: 500px;
+    height: 100%;
+    max-height: 800px;
+    background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url('src/undraw_breakfast_psiw.png'); 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    border-radius: 10px;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.486);
+
+
+}
+
+.info::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 40px;
+    background-color: #eba960;
+}
+
+
+.info .title {
+    position: relative;
+    top: 70px;
+    color: rgb(202, 202, 202);
+    font-size: 80px;
+    font-weight: 700;
+}
+
+.info .title span {
+    color: #eba960;
+}
+
+.info .image-content {
+    position: relative;
+    width: 80%;
+    height: 220px;
+    background-color: #fff;
+    /* margin-top: -200px; */
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+    border: 10px solid #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+}
+
+.info .image-content .image {
+    position: relative;
+    min-width: 200px;
+    height: 200px;
+    background-color: red;
+    overflow: hidden;
+    margin-top: 10px;
+    margin-right: 10px;
+    border-radius: 10px;
+    left: 0;
+    animation: animate 10s ease-in-out infinite;
+}
+
+
+.info .image-content .image img {
+    width: 120%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@keyframes animate {
+    0% {
+        left: 40px;
+    }
+
+    50% {
+        left: -600px;
+    }
+
+    100% {
+        left: 40px;
+    }
+}
+
+.info h2 {
+    bottom: 100px;
+    font-size: 30px;
+    text-align: left;
+    text-size-adjust: unset;
+    width: 80%;
+    height: 200px;
+    color: #636363;
+    overflow-y: scroll;
+
+}
+
+.info a {
+    all: unset;
+    width: 100px;
+    height: 50px;
+    background-image:none;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 60px;
+    margin-bottom: 30px;
+    cursor: pointer;
+    transition: .2s;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.199);
+}
+
+.info a:hover {
+    background-image: linear-gradient(to top, #d299c2 0%, #fef9d7 100%);
+    box-shadow: 5px 5px 10px #ffc5ef;
+
+    letter-spacing: 2px;
+}
+
+/* ----------MENU SECTION----------------- */
+
+#menu {
+    position: relative;
+    height: auto;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.menu-logo {
+    position: relative;
+    width: 200px;
+    height: 100px;
+    background-color: #fff;
+    margin-top: 10px;
+    overflow: hidden;
+}
+.menu-logo img {
+    width: 100%;
+    object-fit: cover;
+
+    position: relative;
+    top: -30px;
+}
+
+.foods-content {
+    width: 80%;
+    height: auto;
+    position: relative;
+    margin-top: 25px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.199);
+    margin-left: 150px;
+    cursor: pointer;
+}
+
+.foods-content ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.foods-content ul li {
+    width: 350px;
+    height: 300px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.199);
+    list-style: none;
+    margin-bottom: 40px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    transition: .2s;
+}
+
+.foods-content ul li:hover {
+    box-shadow: 0 0 10px rgb(255, 123, 0);
+    transform: scale(1.1);
+
+}
+
+
+.foods-content ul li .description{
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    background-color: rgba(0, 0, 0, 0.8);
+    bottom: -100px;
+    transition: .2s;
+    padding: 10px;
+}
+
+.foods-content ul li .description::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 20px;
+    background-color: #fee140;
+    top: 0;
+    left: 0;
+}
+
+.foods-content ul li .description::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 20px;
+    background-color: rgb(255, 115, 0);
+    top: 0;
+    left: 0;
+    transition: .3s;
+}
+
+.foods-content ul li:hover .description::after {
+    width: 100%;
+    transition-delay: .2s;
+}
+
+.foods-content ul li:hover .description {
+    bottom: 0;
+    backdrop-filter: blur(10px);
+}
+
+.foods-content ul li .description .name{
+    color: #eba960;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: .5s;
+
+    opacity: 0;
+    position: relative;
+    top: 20px;
+
+}
+
+.foods-content ul li:hover .description .name { 
+    opacity: 1;
+    top: 0;
+    transition-delay: .1s;
+}
+
+.foods-content ul li:hover .description .name span:nth-child(1) {
+    font-size: 20px;
+}
+
+.foods-content ul li .description .price {
+    color: #eba960;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    opacity: 0;
+    position: relative;
+    top: 20px;
+    transition: .3s;
+}
+
+.foods-content ul li:hover .description .price {
+    opacity: 1;
+    top: 0;
+    transition-delay: .2s;
+}
+
+.foods-content ul li:hover .description .price span:nth-child(1) {
+    font-size: 20px;
+    color: #37ecba;
+}
+
+
+.foods-content ul li:hover .description h3 span {
+    color: #37ecba;
+}
+
+.foods-content ul li img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(.8) blur(1px);
+    transition: .2s;
+}
+
+.foods-content ul li:hover img {
+    filter: grayscale(0);
+
+}
+
+#menu .form-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    margin-top: 40px;
+    width: 70%;
+    position: relative;
+    margin-bottom: 40px;
+}
+
+#menu .form-content h1 {
+    font-size: 30px;
+}
+
+
+#menu .form-content form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+#menu .form-content form .input-content {
+    width: 100%;
+    height: auto;
+    background-color: rgba(0, 0, 0, 0.062);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    transition: .2s;
+
+}
+
+#menu .form-content form .input-content:hover {
+    background-color: #fff;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.199);
+    
+}
+
+
+#menu .form-content form .input-content span:nth-child(1) {
+    margin-left: 20px;
+    font-size: 25px;
+}
+
+#menu .form-content form .input-content input {
+    padding: 15px;
+    outline: none;
+    border: none;
+    font-size: 18px;
+    background-color: transparent;
+}
+
+#menu .form-content form .input-button{
+    background-color: rgba(0, 0, 0, 0.062);
+    position: relative;
+    width: 150px;
+    height: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 10px;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    transition: .2s;
+    text-align: center;
+    overflow: hidden;
+}
+
+#menu .form-content form .input-button:hover {
+    background-color: #fff;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.199);
+
+
+}
+
+#menu .form-content form .input-button span{
+    color: #000;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: .2s;
+
+}
+
+#menu .form-content form .input-button span:nth-child(1){
+    font-size: 40px;
+    top: 0%;
+    opacity: 0;
+    transition: .2s;
+}
+
+#menu .form-content form .input-button:hover span:nth-child(1) {
+    opacity: 1;
+    top:65%;
+}
+
+#menu .form-content form .input-button:hover span:nth-child(2) {
+    opacity: 0;
+    top: 100%;
+}
+
+
+/* -----------TIME SECTION------------------- */
+#time {
+    height: auto;
+    width: 100%;
+    background: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), url('src/undraw_Time_management_re_tk5w.png');
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+
+}
+
+#time .title {
+    text-align: center;
+    font-size: 60px;
+    color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.055);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.062);
+}
+
+.calendar {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    background-color: rgba(0, 0, 0, 0.15);
+    margin-top: 20px;
+    display: flex;
+}
+
+.calendar .image {
+    position: relative;
+    height: 100%;
+    min-width: 500px;
+    width: 500px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
+
+
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+
+    margin-top: 20px;
+    margin-left: 150px;
+
+    
+}
+.calendar .image img {
+    width: 100%;
+    object-fit: cover;
+}
+
+
+.calendar .calendar-box {
+    width: 50%;
+    min-width: 300px;
+    height: 100%;
+    background-color: transparent;
+    padding: 10px;
+}
+
+.calendar .calendar-box ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.calendar .calendar-box ul li {
+    width: 100%;
+    height: 45px;
+    background-color: #f0f0f0;
+    list-style: none;
+    position: relative;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+
+    transition: .2s;
+}
+
+.calendar .calendar-box ul li:hover {
+    background-color: #fff;
+    transform: scale(1.1);
+}
+
+
+.calendar .calendar-box ul li {
+    display: flex;
+    justify-content: space-between;
+}
+
+.calendar .calendar-box ul .sunday::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 100%;
+    background-color: #ecc237;
+}
+
+.calendar .calendar-box ul .monday::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 100%;
+    background-color: #43e97b;
+}
+
+.calendar .calendar-box ul .tuesday::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 100%;
+    background-color: #43e97b;
+}
+
+.calendar .calendar-box ul .wednesday::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 100%;
+    background-color: #43e97b;
+}
+
+.calendar .calendar-box ul .thursday::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 100%;
+    background-color: #43e97b;
+}
+
+.calendar .calendar-box ul .friday::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 100%;
+    background-color: #43e97b;
+}
+
+.calendar .calendar-box ul .saturday::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 100%;
+    background-color: #eba960;
+}
+
+.calendar .calendar-box ul li h2{
+    position: relative;
+    margin-left: 20px;
+    color: #999;
+    margin-top: 10px;
+}
+.calendar .calendar-box ul li h3 {
+    position: relative;
+    margin-left: 20px;
+    color: #999;
+    margin-top: 10px;
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+#time .delivery {
+    background-color: rgba(0, 0, 0, 0.1);
+    width: 100%;
+    height: 400px;
+    position:relative;
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    right: 0;
+}
+
+#time .delivery .d-info {
+    background-color: #ffffff;
+    width: calc(100%);
+    overflow-y: scroll;
+    margin-left: 155px;
+    margin-right: 20px;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
+
+
+}
+
+
+#time .delivery .d-info h1{
+    color: #eba960;
+    font-size: 50px;
+    padding: 0px 10px;
+}
+
+#time .delivery .d-info p {
+    color: rgb(112, 112, 112);
+    font-size: 30px;
+    justify-content: center;
+    padding: 0px 10px;
+}
+
+#time .delivery .image {
+    width: 500px;
+    height: 100%;
+    display: flex;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
+
+}
+
+#time .delivery .image img {
+    width: 100%;
+    object-fit: cover;
+}
+
+
+#contact {
+    min-height: auto;
+    background-color: white;
+}
+
+
+#contact .title{
+    text-align: center;
+    font-size: 40px;
+    margin-top: 20px;
+    color: #999;
+    margin-bottom: 20px;
+
+}
+
+#contact form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 80%;
+    position: relative;
+    margin-left: 180px;
+
+
+}
+
+#contact form .row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+#contact form .row input{
+    width: 45%;
+    outline: none;
+    border: none;
+    background-color: #f0f0f0;
+    transition: .2s;
+}
+
+#contact form .row input:hover {
+    background-color: rgb(255, 255, 255);
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+
+}
+
+#contact form input[type="submit"]{
+    width: 150px;
+    height: 50px;
+    transition: 0.2s;
+    border: none;
+}
+
+#contact form input[type="submit"]:hover {
+    background-color: #37ecba;
+}
+
+#contact form input{
+    width: 100%;
+    height: 30px;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 20px;
+}
+
+#contact form textarea {
+    width: 100%;
+    height: 300px;
+    resize: none;
+    border-radius: 10px;
+    background-color: #f0f0f0;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    transition: .2s;
+    padding: 10px;
+}
+
+#contact form textarea:hover {
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);   
+    font-size: 20px;
+}
+
+
+/* -------RESPONSIVE-------- */
+@media (max-width: 1000px) {
+    .info {
+        width: 100%;
+    }
+
+    .navbar {
+        display: none;
+    }
+
+    .foods-content {
+        margin-left: 0;
+        width: 90%;
+    }
+
+    .calendar .calendar-box {
+        width: 100%;
+    }
+    .calendar .image {
+        margin-left: 0;
+    }
+
+    #time .delivery {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    #time .delivery .d-info {
+        width: 50%;
+        margin-left: 0;
+    }
+
+    #contact form {
+        width: 100%;
+        margin-left: 0;
+    }
+
+
+}
+
+footer {
+    margin-top: 20px;
+    width: 100%;
+    height: 50px;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+footer ul {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+}
+
+footer ul li {
+    list-style: none;
+    color: #fff;
+    font-size: 30px;
+    transition: 0.2s;
+}
+
+footer ul li:nth-child(1):hover {
+    color: red;
+}
+
+footer ul li:nth-child(2):hover {
+    color: rgb(67, 67, 255);
+}
+
+footer ul li:nth-child(3):hover {
+    color: rgb(255, 0, 242);
+}
+
+footer ul li:nth-child(4):hover {
+    color: rgb(0, 183, 255);
+}
+
+@media (max-width: 900px) {
+    .calendar .image {
+        display: none;
+    }
+
+    #time .delivery .image {
+        display: none;
+    }
+
+    #time .delivery .d-info {
+        width: 100%;
+        margin-right: 0;
+    }
+
+}
